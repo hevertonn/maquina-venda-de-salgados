@@ -1,3 +1,4 @@
+/* Simulator = Quartus II Simulator */
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -32,125 +33,173 @@ HEADER
 	GRID_DUTY_CYCLE = 50;
 }
 
-SIGNAL("moeda_in")
+SIGNAL("digito")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
-	WIDTH = 2;
+	WIDTH = 4;
 	LSB_INDEX = 0;
 	DIRECTION = INPUT;
 	PARENT = "";
 }
 
-SIGNAL("moeda_in[1]")
+SIGNAL("digito[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "moeda_in";
+	PARENT = "digito";
 }
 
-SIGNAL("moeda_in[0]")
+SIGNAL("digito[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "moeda_in";
+	PARENT = "digito";
 }
 
-SIGNAL("moeda_presente")
+SIGNAL("digito[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "";
+	DIRECTION = INPUT;
+	PARENT = "digito";
 }
 
-SIGNAL("valor_moeda")
+SIGNAL("digito[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "digito";
+}
+
+SIGNAL("segmentos")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
-	WIDTH = 5;
+	WIDTH = 7;
 	LSB_INDEX = 0;
 	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("valor_moeda[4]")
+SIGNAL("segmentos[6]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "valor_moeda";
+	PARENT = "segmentos";
 }
 
-SIGNAL("valor_moeda[3]")
+SIGNAL("segmentos[5]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "valor_moeda";
+	PARENT = "segmentos";
 }
 
-SIGNAL("valor_moeda[2]")
+SIGNAL("segmentos[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "valor_moeda";
+	PARENT = "segmentos";
 }
 
-SIGNAL("valor_moeda[1]")
+SIGNAL("segmentos[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "valor_moeda";
+	PARENT = "segmentos";
 }
 
-SIGNAL("valor_moeda[0]")
+SIGNAL("segmentos[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "valor_moeda";
+	PARENT = "segmentos";
 }
 
-TRANSITION_LIST("moeda_in[1]")
+SIGNAL("segmentos[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "segmentos";
+}
+
+SIGNAL("segmentos[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "segmentos";
+}
+
+TRANSITION_LIST("digito[3]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("moeda_in[0]")
+TRANSITION_LIST("digito[2]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("moeda_presente")
+TRANSITION_LIST("digito[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("digito[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("segmentos[6]")
 {
 	NODE
 	{
@@ -159,7 +208,7 @@ TRANSITION_LIST("moeda_presente")
 	}
 }
 
-TRANSITION_LIST("valor_moeda[4]")
+TRANSITION_LIST("segmentos[5]")
 {
 	NODE
 	{
@@ -168,7 +217,7 @@ TRANSITION_LIST("valor_moeda[4]")
 	}
 }
 
-TRANSITION_LIST("valor_moeda[3]")
+TRANSITION_LIST("segmentos[4]")
 {
 	NODE
 	{
@@ -177,7 +226,7 @@ TRANSITION_LIST("valor_moeda[3]")
 	}
 }
 
-TRANSITION_LIST("valor_moeda[2]")
+TRANSITION_LIST("segmentos[3]")
 {
 	NODE
 	{
@@ -186,7 +235,7 @@ TRANSITION_LIST("valor_moeda[2]")
 	}
 }
 
-TRANSITION_LIST("valor_moeda[1]")
+TRANSITION_LIST("segmentos[2]")
 {
 	NODE
 	{
@@ -195,7 +244,16 @@ TRANSITION_LIST("valor_moeda[1]")
 	}
 }
 
-TRANSITION_LIST("valor_moeda[0]")
+TRANSITION_LIST("segmentos[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("segmentos[0]")
 {
 	NODE
 	{
@@ -206,17 +264,17 @@ TRANSITION_LIST("valor_moeda[0]")
 
 DISPLAY_LINE
 {
-	CHANNEL = "moeda_in";
+	CHANNEL = "digito";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 0;
 	TREE_LEVEL = 0;
-	CHILDREN = 1, 2;
+	CHILDREN = 1, 2, 3, 4;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "moeda_in[1]";
+	CHANNEL = "digito[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;
@@ -226,7 +284,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "moeda_in[0]";
+	CHANNEL = "digito[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 2;
@@ -236,71 +294,102 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "moeda_presente";
+	CHANNEL = "digito[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 3;
-	TREE_LEVEL = 0;
+	TREE_LEVEL = 1;
+	PARENT = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "valor_moeda";
+	CHANNEL = "digito[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 4;
-	TREE_LEVEL = 0;
-	CHILDREN = 5, 6, 7, 8, 9;
+	TREE_LEVEL = 1;
+	PARENT = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "valor_moeda[4]";
+	CHANNEL = "segmentos";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 5;
-	TREE_LEVEL = 1;
-	PARENT = 4;
+	TREE_LEVEL = 0;
+	CHILDREN = 6, 7, 8, 9, 10, 11, 12;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "valor_moeda[3]";
+	CHANNEL = "segmentos[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 6;
 	TREE_LEVEL = 1;
-	PARENT = 4;
+	PARENT = 5;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "valor_moeda[2]";
+	CHANNEL = "segmentos[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 7;
 	TREE_LEVEL = 1;
-	PARENT = 4;
+	PARENT = 5;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "valor_moeda[1]";
+	CHANNEL = "segmentos[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 8;
 	TREE_LEVEL = 1;
-	PARENT = 4;
+	PARENT = 5;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "valor_moeda[0]";
+	CHANNEL = "segmentos[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
-	PARENT = 4;
+	PARENT = 5;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "segmentos[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 1;
+	PARENT = 5;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "segmentos[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 1;
+	PARENT = 5;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "segmentos[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 12;
+	TREE_LEVEL = 1;
+	PARENT = 5;
 }
 
 TIME_BAR
