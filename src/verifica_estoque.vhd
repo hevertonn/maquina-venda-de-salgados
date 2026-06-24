@@ -5,8 +5,7 @@ entity verifica_estoque is
   port (
     tipo_salgado : in    std_logic_vector(2 downto 0);
     estoque      : in    std_logic_vector(4 downto 0);
-    tem_estoque  : out   std_logic;
-    sem_estoque  : out   std_logic
+    tem_estoque  : out   std_logic
   );
 end entity verifica_estoque;
 
@@ -50,6 +49,5 @@ begin
   end process p_verifica_estoque;
 
   tem_estoque <= disponivel;
-  sem_estoque <= not disponivel;
 
 end architecture rtl;

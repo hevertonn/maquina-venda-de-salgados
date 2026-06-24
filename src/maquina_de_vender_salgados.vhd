@@ -101,8 +101,7 @@ architecture struct of maquina_de_vender_salgados is
     port (
       tipo_salgado : in    std_logic_vector(2 downto 0);
       estoque      : in    std_logic_vector(4 downto 0);
-      tem_estoque  : out   std_logic;
-      sem_estoque  : out   std_logic
+      tem_estoque  : out   std_logic
     );
   end component verifica_estoque;
 
@@ -198,8 +197,7 @@ begin
     port map (
       tipo_salgado => tipo_salgado,
       estoque      => estoque,
-      tem_estoque  => sig_tem_estoque,
-      sem_estoque  => sem_estoque
+      tem_estoque  => sig_tem_estoque
     );
 
 end architecture struct;
