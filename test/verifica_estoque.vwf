@@ -1,4 +1,3 @@
-/* Simulator = Quartus II Simulator */
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -93,16 +92,6 @@ SIGNAL("estoque[0]")
 	PARENT = "estoque";
 }
 
-SIGNAL("sem_estoque")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
 SIGNAL("tem_estoque")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -176,7 +165,10 @@ TRANSITION_LIST("estoque[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 940.0;
 	}
 }
 
@@ -185,7 +177,9 @@ TRANSITION_LIST("estoque[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 940.0;
 	}
 }
 
@@ -194,16 +188,9 @@ TRANSITION_LIST("estoque[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("sem_estoque")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 940.0;
 	}
 }
 
@@ -221,7 +208,9 @@ TRANSITION_LIST("tipo_salgado[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 970.0;
 	}
 }
 
@@ -230,7 +219,10 @@ TRANSITION_LIST("tipo_salgado[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 950.0;
 	}
 }
 
@@ -239,7 +231,12 @@ TRANSITION_LIST("tipo_salgado[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 940.0;
 	}
 }
 
@@ -305,30 +302,12 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "sem_estoque";
+	CHANNEL = "tipo_salgado";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 6;
 	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "tem_estoque";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 7;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "tipo_salgado";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 8;
-	TREE_LEVEL = 0;
-	CHILDREN = 9, 10, 11;
+	CHILDREN = 7, 8, 9;
 }
 
 DISPLAY_LINE
@@ -336,9 +315,9 @@ DISPLAY_LINE
 	CHANNEL = "tipo_salgado[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 9;
+	TREE_INDEX = 7;
 	TREE_LEVEL = 1;
-	PARENT = 8;
+	PARENT = 6;
 }
 
 DISPLAY_LINE
@@ -346,9 +325,9 @@ DISPLAY_LINE
 	CHANNEL = "tipo_salgado[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 10;
+	TREE_INDEX = 8;
 	TREE_LEVEL = 1;
-	PARENT = 8;
+	PARENT = 6;
 }
 
 DISPLAY_LINE
@@ -356,9 +335,18 @@ DISPLAY_LINE
 	CHANNEL = "tipo_salgado[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 11;
+	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
-	PARENT = 8;
+	PARENT = 6;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "tem_estoque";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR
