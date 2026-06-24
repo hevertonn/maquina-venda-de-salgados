@@ -1,0 +1,27 @@
+# Pastas geradas pelo Quartus
+db/
+incremental_db/
+output_files/
+simulation/
+timing/
+greybox_tmp/
+
+# Relatórios de síntese, logs e arquivos de status
+*.rpt
+*.summary
+*.smsg
+*.pin
+*.done
+*.jdi
+*.sld
+*.map
+*.fit
+*.qws
+*.eqc
+*.pof
+*.sof
+
+# Arquivos de backup e temporários do sistema
+*.bak
+*~
+.DS_Store
