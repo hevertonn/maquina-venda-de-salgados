@@ -17,7 +17,7 @@ entity maquina_de_vender_salgados is
     libera_todas_as_moedas : out   std_logic;
     moeda_recusada         : out   std_logic;
     sem_estoque            : out   std_logic;
-	 estado_debug           : out   std_logic_vector(2 downto 0)
+    estado_debug           : out   std_logic_vector(2 downto 0)
   );
 end entity maquina_de_vender_salgados;
 
@@ -40,6 +40,14 @@ architecture struct of maquina_de_vender_salgados is
       digito_centavos : out   std_logic_vector(3 downto 0)
     );
   end component conversor_display;
+
+  component debouncer is
+    port (
+      clk   : in    std_logic;
+      botao : in    std_logic;
+      pulso : out   std_logic
+    );
+  end component debouncer;
 
   component decodificador_7seg is
     port (
@@ -117,6 +125,9 @@ architecture struct of maquina_de_vender_salgados is
   signal sig_habilita_soma    : std_logic;
   signal sig_produto_valido   : std_logic;
   signal sig_tem_estoque      : std_logic;
+  signal sig_confirma_moeda   : std_logic;
+  signal sig_desiste          : std_logic;
+  signal sig_reset            : std_logic;
 
 begin
 
@@ -134,6 +145,27 @@ begin
       soma_atual      => sig_soma_atual,
       digito_unidade  => sig_digito_unidade,
       digito_centavos => sig_digito_centavos
+    );
+
+  debouncer_confirma_moeda_inst : component debouncer
+    port map (
+      clk   => clk,
+      botao => confirma_moeda,
+      pulso => sig_confirma_moeda
+    );
+
+  debouncer_desiste_inst : component debouncer
+    port map (
+      clk   => clk,
+      botao => desiste,
+      pulso => sig_desiste
+    );
+
+  debouncer_reset_inst : component debouncer
+    port map (
+      clk   => clk,
+      botao => reset,
+      pulso => sig_reset
     );
 
   decodificador_7seg_unidade_inst : component decodificador_7seg
@@ -158,7 +190,7 @@ begin
   somador_moedas_inst : component somador_moedas
     port map (
       clk           => clk,
-      reset         => reset,
+      reset         => sig_reset,
       limpa_soma    => sig_limpa_soma,
       habilita_soma => sig_habilita_soma,
       valor_moeda   => sig_valor_moeda,
@@ -175,14 +207,14 @@ begin
   unidade_controle_inst : component unidade_controle
     port map (
       clk                    => clk,
-      reset                  => reset,
+      reset                  => sig_reset,
       produto_valido         => sig_produto_valido,
       tem_estoque            => sig_tem_estoque,
-      confirma_moeda         => confirma_moeda,
+      confirma_moeda         => sig_confirma_moeda,
       moeda_presente         => sig_moeda_presente,
       valor_suficiente       => sig_valor_suficiente,
       tem_troco              => sig_tem_troco,
-      desiste                => desiste,
+      desiste                => sig_desiste,
       habilita_soma          => sig_habilita_soma,
       limpa_soma             => sig_limpa_soma,
       libera_salgado         => libera_salgado,
