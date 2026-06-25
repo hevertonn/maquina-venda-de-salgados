@@ -56,24 +56,6 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VECTOR_OUTPUT_FORMAT VWF
 
-set_global_assignment -name VHDL_FILE src/comparador_valor.vhd
-set_global_assignment -name VHDL_FILE src/conversor_display.vhd
-set_global_assignment -name VHDL_FILE src/decodificador_7seg.vhd
-set_global_assignment -name VHDL_FILE src/decodificador_moeda.vhd
-set_global_assignment -name VHDL_FILE src/maquina_de_vender_salgados.vhd
-set_global_assignment -name VHDL_FILE src/somador_moedas.vhd
-set_global_assignment -name VHDL_FILE src/tabela_precos.vhd
-set_global_assignment -name VHDL_FILE src/unidade_controle.vhd
-set_global_assignment -name VHDL_FILE src/verifica_estoque.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE test/comparador_valor.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE test/conversor_display.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE test/decodificador_7seg.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE test/decodificador_moeda.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE test/maquina_de_vender_salgados.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE test/somador_moedas.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE test/tabela_precos.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE test/unidade_controle.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE test/verifica_estoque.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -114,4 +96,23 @@ set_location_assignment PIN_H4 -to segmentos_centavos[3]
 set_location_assignment PIN_G3 -to segmentos_centavos[4]
 set_location_assignment PIN_D2 -to segmentos_centavos[5]
 set_location_assignment PIN_D1 -to segmentos_centavos[6]
+set_global_assignment -name VHDL_FILE src/comparador_valor.vhd
+set_global_assignment -name VHDL_FILE src/conversor_display.vhd
+set_global_assignment -name VHDL_FILE src/debouncer.vhd
+set_global_assignment -name VHDL_FILE src/decodificador_7seg.vhd
+set_global_assignment -name VHDL_FILE src/decodificador_moeda.vhd
+set_global_assignment -name VHDL_FILE src/maquina_de_vender_salgados.vhd
+set_global_assignment -name VHDL_FILE src/somador_moedas.vhd
+set_global_assignment -name VHDL_FILE src/tabela_precos.vhd
+set_global_assignment -name VHDL_FILE src/unidade_controle.vhd
+set_global_assignment -name VHDL_FILE src/verifica_estoque.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE test/comparador_valor.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE test/conversor_display.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE test/decodificador_7seg.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE test/decodificador_moeda.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE test/maquina_de_vender_salgados.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE test/somador_moedas.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE test/tabela_precos.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE test/unidade_controle.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE test/verifica_estoque.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
