@@ -25,10 +25,10 @@ HEADER
 	VERSION = 1;
 	TIME_UNIT = ns;
 	DATA_OFFSET = 0.0;
-	DATA_DURATION = 1000.0;
+	DATA_DURATION = 2000.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
-	GRID_PERIOD = 10.0;
+	GRID_PERIOD = 20.0;
 	GRID_DUTY_CYCLE = 50;
 }
 
@@ -460,8 +460,8 @@ TRANSITION_LIST("clk")
 		NODE
 		{
 			REPEAT = 100;
-			LEVEL 0 FOR 5.0;
-			LEVEL 1 FOR 5.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
 		}
 	}
 }
@@ -471,13 +471,13 @@ TRANSITION_LIST("confirma_moeda")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 90.0;
-		LEVEL 0 FOR 20.0;
-		LEVEL 1 FOR 30.0;
-		LEVEL 0 FOR 20.0;
-		LEVEL 1 FOR 30.0;
-		LEVEL 0 FOR 20.0;
-		LEVEL 1 FOR 790.0;
+		LEVEL 1 FOR 180.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 60.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 60.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 1580.0;
 	}
 }
 
@@ -486,7 +486,7 @@ TRANSITION_LIST("desiste")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 1 FOR 2000.0;
 	}
 }
 
@@ -495,7 +495,7 @@ TRANSITION_LIST("estoque[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -504,7 +504,7 @@ TRANSITION_LIST("estoque[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -513,8 +513,8 @@ TRANSITION_LIST("estoque[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 980.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 1960.0;
 	}
 }
 
@@ -523,7 +523,7 @@ TRANSITION_LIST("estoque[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -532,8 +532,8 @@ TRANSITION_LIST("estoque[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 20.0;
-		LEVEL 1 FOR 980.0;
+		LEVEL 0 FOR 120.0;
+		LEVEL 1 FOR 1880.0;
 	}
 }
 
@@ -542,7 +542,7 @@ TRANSITION_LIST("libera_salgado")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -551,7 +551,7 @@ TRANSITION_LIST("libera_todas_as_moedas")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -560,7 +560,7 @@ TRANSITION_LIST("libera_troco")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -569,13 +569,13 @@ TRANSITION_LIST("moeda_in[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 90.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 770.0;
+		LEVEL 0 FOR 180.0;
+		LEVEL 1 FOR 80.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 80.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 80.0;
+		LEVEL 0 FOR 1540.0;
 	}
 }
 
@@ -584,11 +584,13 @@ TRANSITION_LIST("moeda_in[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 90.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 820.0;
+		LEVEL 0 FOR 180.0;
+		LEVEL 1 FOR 80.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 80.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 80.0;
+		LEVEL 0 FOR 1540.0;
 	}
 }
 
@@ -597,7 +599,7 @@ TRANSITION_LIST("moeda_recusada")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -606,9 +608,9 @@ TRANSITION_LIST("reset")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 30.0;
-		LEVEL 0 FOR 20.0;
-		LEVEL 1 FOR 950.0;
+		LEVEL 1 FOR 60.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 1900.0;
 	}
 }
 
@@ -617,7 +619,7 @@ TRANSITION_LIST("segmentos_centavos[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -626,7 +628,7 @@ TRANSITION_LIST("segmentos_centavos[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -635,7 +637,7 @@ TRANSITION_LIST("segmentos_centavos[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -644,7 +646,7 @@ TRANSITION_LIST("segmentos_centavos[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -653,7 +655,7 @@ TRANSITION_LIST("segmentos_centavos[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -662,7 +664,7 @@ TRANSITION_LIST("segmentos_centavos[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -671,7 +673,7 @@ TRANSITION_LIST("segmentos_centavos[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -680,7 +682,7 @@ TRANSITION_LIST("segmentos_unidade[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -689,7 +691,7 @@ TRANSITION_LIST("segmentos_unidade[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -698,7 +700,7 @@ TRANSITION_LIST("segmentos_unidade[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -707,7 +709,7 @@ TRANSITION_LIST("segmentos_unidade[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -716,7 +718,7 @@ TRANSITION_LIST("segmentos_unidade[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -725,7 +727,7 @@ TRANSITION_LIST("segmentos_unidade[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -734,7 +736,7 @@ TRANSITION_LIST("segmentos_unidade[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -743,7 +745,7 @@ TRANSITION_LIST("sem_estoque")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -752,7 +754,7 @@ TRANSITION_LIST("tipo_salgado[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -761,8 +763,8 @@ TRANSITION_LIST("tipo_salgado[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 980.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 1960.0;
 	}
 }
 
@@ -771,9 +773,9 @@ TRANSITION_LIST("tipo_salgado[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 40.0;
-		LEVEL 1 FOR 940.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 1880.0;
 	}
 }
 
@@ -782,7 +784,7 @@ TRANSITION_LIST("estado_debug[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -791,7 +793,7 @@ TRANSITION_LIST("estado_debug[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -800,7 +802,7 @@ TRANSITION_LIST("estado_debug[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 

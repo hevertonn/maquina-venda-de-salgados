@@ -25,10 +25,10 @@ HEADER
 	VERSION = 1;
 	TIME_UNIT = ns;
 	DATA_OFFSET = 0.0;
-	DATA_DURATION = 1000.0;
+	DATA_DURATION = 2000.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
-	GRID_PERIOD = 10.0;
+	GRID_PERIOD = 20.0;
 	GRID_DUTY_CYCLE = 50;
 }
 
@@ -239,7 +239,7 @@ TRANSITION_LIST("clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 50;
+			REPEAT = 100;
 			LEVEL 0 FOR 10.0;
 			LEVEL 1 FOR 10.0;
 		}
@@ -251,11 +251,11 @@ TRANSITION_LIST("confirma_moeda")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 900.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 1880.0;
 	}
 }
 
@@ -264,7 +264,7 @@ TRANSITION_LIST("desiste")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -273,7 +273,7 @@ TRANSITION_LIST("estado_debug[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -282,7 +282,7 @@ TRANSITION_LIST("estado_debug[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -291,7 +291,7 @@ TRANSITION_LIST("estado_debug[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -300,7 +300,7 @@ TRANSITION_LIST("habilita_soma")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -309,7 +309,7 @@ TRANSITION_LIST("libera_salgado")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -318,7 +318,7 @@ TRANSITION_LIST("libera_todas_as_moedas")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -327,7 +327,7 @@ TRANSITION_LIST("libera_troco")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -336,7 +336,7 @@ TRANSITION_LIST("limpa_soma")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -345,11 +345,11 @@ TRANSITION_LIST("moeda_presente")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 900.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 1880.0;
 	}
 }
 
@@ -358,7 +358,7 @@ TRANSITION_LIST("moeda_recusada")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -367,9 +367,9 @@ TRANSITION_LIST("produto_valido")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 980.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 1960.0;
 	}
 }
 
@@ -378,8 +378,8 @@ TRANSITION_LIST("reset")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 990.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 1980.0;
 	}
 }
 
@@ -388,7 +388,7 @@ TRANSITION_LIST("sem_estoque")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 2000.0;
 	}
 }
 
@@ -397,9 +397,9 @@ TRANSITION_LIST("tem_estoque")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 960.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 1940.0;
 	}
 }
 
@@ -408,7 +408,7 @@ TRANSITION_LIST("tem_troco")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -417,9 +417,9 @@ TRANSITION_LIST("valor_suficiente")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 110.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 880.0;
+		LEVEL 0 FOR 120.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 1860.0;
 	}
 }
 

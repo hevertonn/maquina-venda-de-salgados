@@ -38,7 +38,34 @@ architecture rtl of unidade_controle is
 
   signal estado_atual, proximo_estado : estado_t;
 
+  signal contador       : integer range 0 to 50000000 := 0;
+  signal habilita_timer : std_logic;
+  signal timer_pronto   : std_logic;
+
 begin
+
+  p_timer : process (clk, reset) is
+  begin
+
+    if (reset = '1') then
+      contador     <= 0;
+      timer_pronto <= '0';
+    elsif rising_edge(clk) then
+      if (habilita_timer = '1') then
+        if (contador >= 50000000) then
+          timer_pronto <= '1';
+          contador     <= 0;
+        else
+          contador     <= contador + 1;
+          timer_pronto <= '0';
+        end if;
+      else
+        contador     <= 0;
+        timer_pronto <= '0';
+      end if;
+    end if;
+
+  end process p_timer;
 
   p_atualiza_estado : process (clk, reset) is
   begin
@@ -59,7 +86,8 @@ begin
                               moeda_presente,
                               valor_suficiente,
                               tem_troco,
-                              desiste
+                              desiste,
+                              timer_pronto
                              ) is
   begin
 
@@ -72,6 +100,7 @@ begin
     libera_todas_as_moedas <= '0';
     moeda_recusada         <= '0';
     sem_estoque            <= '0';
+    habilita_timer         <= '0';
 
     case estado_atual is
 
@@ -94,7 +123,11 @@ begin
       when aviso_sem_estoque =>
 
         sem_estoque    <= '1';
-        proximo_estado <= espera_escolha;
+        habilita_timer <= '1';
+
+        if (timer_pronto = '1') then
+          proximo_estado <= espera_escolha;
+        end if;
 
       when recebe_moedas =>
 
@@ -120,23 +153,34 @@ begin
       when estado_libera_salgado =>
 
         libera_salgado <= '1';
+        habilita_timer <= '1';
 
-        if (tem_troco = '1') then
-          proximo_estado <= estado_libera_troco;
-        else
-          proximo_estado <= espera_escolha;
+        if (timer_pronto = '1') then
+          if (tem_troco = '1') then
+            proximo_estado <= estado_libera_troco;
+          else
+            proximo_estado <= espera_escolha;
+          end if;
         end if;
 
       when estado_libera_troco =>
 
         libera_troco   <= '1';
-        proximo_estado <= espera_escolha;
+        habilita_timer <= '1';
+
+        if (timer_pronto = '1') then
+          proximo_estado <= espera_escolha;
+        end if;
 
       when devolve_moedas =>
 
         libera_todas_as_moedas <= '1';
         limpa_soma             <= '1';
-        proximo_estado         <= espera_escolha;
+        habilita_timer         <= '1';
+
+        if (timer_pronto = '1') then
+          proximo_estado <= espera_escolha;
+        end if;
 
     end case;
 
