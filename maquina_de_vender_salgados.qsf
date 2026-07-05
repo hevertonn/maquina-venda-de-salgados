@@ -78,9 +78,9 @@ set_location_assignment PIN_U21 -to libera_troco
 set_location_assignment PIN_V22 -to libera_todas_as_moedas
 set_location_assignment PIN_R20 -to moeda_recusada
 set_location_assignment PIN_R19 -to sem_estoque
-set_location_assignment PIN_R18 -to estado_debug[0]
-set_location_assignment PIN_U19 -to estado_debug[1]
-set_location_assignment PIN_Y19 -to estado_debug[2]
+set_location_assignment PIN_U18 -to estado_debug[0]
+set_location_assignment PIN_R18 -to estado_debug[1]
+set_location_assignment PIN_R17 -to estado_debug[2]
 set_location_assignment PIN_J2 -to segmentos_unidade[0]
 set_location_assignment PIN_J1 -to segmentos_unidade[1]
 set_location_assignment PIN_H2 -to segmentos_unidade[2]
